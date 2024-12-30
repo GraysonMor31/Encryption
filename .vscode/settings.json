@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "ciphertext",
+        "Ciphertext",
+        "decryptor",
+        "encryptor",
+        "padder",
+        "PKCS",
+        "Unpad",
+        "unpadded",
+        "unpadder",
+        "urandom"
+    ]
+}
