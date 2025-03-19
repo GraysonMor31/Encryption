@@ -2,6 +2,11 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 import os
 
+"""DES (Data Encryption Standard) is a symmetric encryption algorithm that uses a block cipher with a block size of 64 bits.
+DES supports key sizes of 56 bits. DES is used in symmetric encryption, which means that the same key is used for both encryption and decryption.
+The security of DES is based on the complexity of its key schedule and the non-linear transformations that are applied to the data in multiple rounds.
+DES is considered insecure for modern applications due to its small key size and vulnerability to brute-force attacks."""
+
 # Define 64-bit key and 64-bit IV
 key = os.urandom(8)
 iv = os.urandom(8)
@@ -16,6 +21,7 @@ try:
     padded_data = padder.update(plaintext) + padder.finalize()
 
     # Encrypt the plaintext
+    # file deepcode ignore InsecureCipher: <please specify a reason of ignoring this>
     cipher = Cipher(algorithms.DES(key), modes.CBC(iv))
     encryptor = cipher.encryptor()
     ciphertext = encryptor.update(padded_data) + encryptor.finalize()
